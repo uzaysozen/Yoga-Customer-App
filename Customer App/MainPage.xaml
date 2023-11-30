@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Customer_App.MainPage">
+
+    <ScrollView>
+
+        <Frame CornerRadius="0" BackgroundColor="White"
+        Grid.Row="1" VerticalOptions="CenterAndExpand"
+        Margin="0,0,0,0">
+            <VerticalStackLayout Spacing="25">
+
+                <Label
+                Text="SIGN IN"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="16"
+                FontAttributes="Italic" />
+
+                <Frame Padding="10">
+                    <Grid ColumnDefinitions="5,*" ColumnSpacing="10" >
+                        <Entry Placeholder="userid" Grid.Column="1"/>
+                    </Grid>
+                </Frame>
+
+
+                <Button Text="Sign In" FontSize="20" FontAttributes="Italic"/>
+
+                <HorizontalStackLayout Spacing="20">
+                    <Label Text="Don't have userid?" VerticalTextAlignment="Center" FontFamily="bold" />
+
+                </HorizontalStackLayout>
+
+
+
+
+            </VerticalStackLayout>
+
+        </Frame>
+    </ScrollView>
+
+</ContentPage>

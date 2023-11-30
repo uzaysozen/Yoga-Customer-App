@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Customer_App.MainPage">
 
-    <ScrollView>
+    <ScrollView Margin="20">
 
         <Frame CornerRadius="0" BackgroundColor="White"
         Grid.Row="1" VerticalOptions="CenterAndExpand"
@@ -14,24 +14,17 @@
                 Text="SIGN IN"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="16"
-                FontAttributes="Italic" />
+                FontAttributes="Bold" />
 
                 <Frame Padding="10">
                     <Grid ColumnDefinitions="5,*" ColumnSpacing="10" >
-                        <Entry Placeholder="userid" Grid.Column="1"/>
+                        <Entry Placeholder="Email" Grid.Column="1"/>
                     </Grid>
                 </Frame>
 
 
-                <Button Text="Sign In" FontSize="20" FontAttributes="Italic"/>
-
-                <HorizontalStackLayout Spacing="20">
-                    <Label Text="Don't have userid?" VerticalTextAlignment="Center" FontFamily="bold" />
-
-                </HorizontalStackLayout>
-
-
-
+                <Button Text="Sign In" FontSize="20" FontAttributes="Bold" Clicked="OnCounterClicked"/>
+                
 
             </VerticalStackLayout>
 

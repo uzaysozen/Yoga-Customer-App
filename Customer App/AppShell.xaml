@@ -6,14 +6,25 @@
     xmlns:local="clr-namespace:Customer_App"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Yoga"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
 
     <ShellContent
-    Title="class"
-    ContentTemplate="{DataTemplate local:ClassListPage}"
-    Route="ClassListPage" />
+        Title="Login"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="LoginPage" />
+
+    <TabBar x:Name="CustomerTabBar">
+        <Tab Title="Class List" Icon="list_icon.svg">
+            <ShellContent Title="Book a class" ContentTemplate="{DataTemplate local:ClassListPage}" Route="ClassListPage"/>
+        </Tab>
+        <Tab Title="Shopping Cart" Icon="shopping_cart_icon.svg">
+            <ShellContent Title="Shopping Cart" ContentTemplate="{DataTemplate local:ShoppingCartPage}" Route="ShoppingCartPage"/>
+        </Tab>
+        <Tab Title="My Bookings" Icon="ticket_icon.svg">
+            <ShellContent Title="My Bookings" ContentTemplate="{DataTemplate local:MyBookingsPage}" Route="MyBookingsPage"/>
+        </Tab>
+        <Tab Title="Profile" Icon="profile_icon.svg">
+            <ShellContent Title="My Profile" ContentTemplate="{DataTemplate local:ProfilePage}" Route="ProfilePage"/>
+        </Tab>
+    </TabBar>
 
 </Shell>

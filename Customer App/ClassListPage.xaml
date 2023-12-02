@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Customer_App.ClassListPage"
-             Title="Available class list">
+             x:Class="Customer_App.ClassListPage">
 
     <ScrollView>
 
         <VerticalStackLayout>
-            <Label 
-         Text="Welcome to Class List Page!"
-         VerticalOptions="Center" 
-         HorizontalOptions="Center" />
 
-
-            <Frame Margin="40,100,40,0">
-                <Button Text="Go Back" FontSize="20" FontAttributes="Bold" Clicked="BackBtnClicked"/>
-            </Frame>
-           
-
-
-
-
+            <ListView x:Name="classList"
+                      BackgroundColor="Transparent"
+                      SeparatorColor="Gray"/>
 
         </VerticalStackLayout>
 
     </ScrollView>
-    
-   
-    
 </ContentPage>

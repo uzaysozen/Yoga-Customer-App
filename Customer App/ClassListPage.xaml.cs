@@ -5,10 +5,13 @@ public partial class ClassListPage : ContentPage
 	public ClassListPage()
 	{
 		InitializeComponent();
-	}
+		List<string> classes = new() {
+			"Aerial Yoga",
+			"Flow Yoga",
+			"Family Yoga",
+			"Meditation"
+		};
 
-    private void BackBtnClicked(object sender, EventArgs e)
-    {
-        Shell.Current.GoToAsync("//MainPage");
-    }
+		classList.ItemsSource = classes;
+	}
 }

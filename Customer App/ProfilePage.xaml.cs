@@ -21,6 +21,7 @@ public partial class ProfilePage : ContentPage
 	private void OnSignOut(object sender, EventArgs e)
 	{
 		app.User = null;
+		app.ShoppingCart = null;
 		Shell.Current.GoToAsync("///LoginPage");
 		//Navigation.PopToRootAsync();
 	}

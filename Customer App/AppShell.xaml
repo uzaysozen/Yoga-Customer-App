@@ -19,9 +19,6 @@
         <Tab Title="Shopping Cart" Icon="shopping_cart_icon.svg">
             <ShellContent Title="Shopping Cart" ContentTemplate="{DataTemplate local:ShoppingCartPage}" Route="ShoppingCartPage"/>
         </Tab>
-        <Tab Title="My Bookings" Icon="ticket_icon.svg">
-            <ShellContent Title="My Bookings" ContentTemplate="{DataTemplate local:MyBookingsPage}" Route="MyBookingsPage"/>
-        </Tab>
         <Tab Title="Profile" Icon="profile_icon.svg">
             <ShellContent Title="My Profile" ContentTemplate="{DataTemplate local:ProfilePage}" Route="ProfilePage"/>
         </Tab>

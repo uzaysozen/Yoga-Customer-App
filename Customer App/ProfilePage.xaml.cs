@@ -9,8 +9,6 @@ public partial class ProfilePage : ContentPage
 	{
 		
 		InitializeComponent();
-		
-
 	}
 
 	protected override void OnAppearing()
@@ -22,7 +20,7 @@ public partial class ProfilePage : ContentPage
 
 	private void OnSignOut(object sender, EventArgs e)
 	{
-		app.User.Email = null;
+		app.User = null;
 		Shell.Current.GoToAsync("///LoginPage");
 		//Navigation.PopToRootAsync();
 	}

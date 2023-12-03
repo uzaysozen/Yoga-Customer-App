@@ -18,7 +18,20 @@
             else
             {
                 App app = Application.Current as App;
-                app.User.Email = emailTxt.Text;
+                YogaClassDB db = app.YogaClassDatabase;
+                User currentUser = db.GetUser(emailTxt.Text);
+
+				if (currentUser == null) 
+                {
+                    User user = new User();
+                    user.Email = emailTxt.Text;
+                    db.SaveUser(user);
+                    app.User = user;
+				} 
+                else
+                {
+                    app.User = currentUser;
+				}
                 Shell.Current.GoToAsync("///ClassListPage");
             }
         }

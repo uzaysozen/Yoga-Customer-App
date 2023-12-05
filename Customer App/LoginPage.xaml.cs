@@ -2,8 +2,6 @@
 {
     public partial class LoginPage : ContentPage
     {
-       
-
         public LoginPage()
         {
             InitializeComponent();
@@ -18,23 +16,17 @@
             else
             {
                 App app = Application.Current as App;
-                YogaClassDB db = app.YogaClassDatabase;
-                User currentUser = db.GetUser(emailTxt.Text);
-
-				if (currentUser == null) 
+                User user = new User
                 {
-                    User user = new User();
-                    user.Email = emailTxt.Text;
-                    db.SaveUser(user);
-                    app.User = user;
-				} 
-                else
-                {
-                    app.User = currentUser;
-				}
+                    userId = emailTxt.Text
+                };
+                app.User = user;
+                app.User.bookingList = new List<Instance>();
+                app.ShoppingCart = new();
+				
                 Shell.Current.GoToAsync("///ClassListPage");
-                //Shell.Current.GoToAsync("///NewPage2");
             }
         }
+
     }
 }

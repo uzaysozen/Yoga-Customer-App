@@ -15,10 +15,10 @@
                     <HorizontalStackLayout Spacing="75" Padding="10">
                         <!-- ClassInstance details -->
                         <VerticalStackLayout HorizontalOptions="StartAndExpand">
-                            <Label Text="{Binding ClassDate}" VerticalOptions="Center" />
-                            <Label Text="{Binding ClassTime}" VerticalOptions="Center" />
-                            <Label Text="{Binding DayOfTheWeek}" VerticalOptions="Center" />
-                            <Label Text="{Binding TeacherName}" VerticalOptions="Center" />
+                            <Label Text="{Binding date}" VerticalOptions="Center" />
+                            <Label Text="{Binding classTime}" VerticalOptions="Center" />
+                            <Label Text="{Binding classDay}" VerticalOptions="Center" />
+                            <Label Text="{Binding teacher}" VerticalOptions="Center" />
                         </VerticalStackLayout>
 
                         <!-- Remove Button -->
@@ -29,6 +29,6 @@
         </CollectionView>
 
         <!-- Bottom Button -->
-        <Button Grid.Row="1" Text="Book Selected Classes" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="ForestGreen"/>
+        <Button Grid.Row="1" Text="Book Selected Classes" WidthRequest="200" HorizontalOptions="Center" Clicked="Book_Class" BackgroundColor="ForestGreen"/>
     </Grid>
 </ContentPage>

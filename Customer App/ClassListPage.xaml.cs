@@ -1,3 +1,5 @@
+using Java.Util;
+
 namespace Customer_App;
 
 public partial class ClassListPage : ContentPage
@@ -11,12 +13,18 @@ public partial class ClassListPage : ContentPage
 		
 		app = Application.Current as App;
 		db = app.YogaClassDatabase;
-        Rest_Client client = new Rest_Client();
-
-        List<ClassInstance> classes = db.GetClassInstanceList();
-
-		ClassInstancesListView.ItemsSource = classes;
+        fetchClassInstanceList();
+        
 	}
+
+	private async void fetchClassInstanceList()
+	{
+		Rest_Client client = new Rest_Client();
+
+		List<ClassInstance> result = await client.SendEventAsync();
+        ClassInstancesListView.ItemsSource = result;
+    }
+
 
 	private void AddToCart_Clicked(object sender, EventArgs e)
 	{
@@ -28,6 +36,7 @@ public partial class ClassListPage : ContentPage
 		if (existingItem == null)
 		{
 			app.ShoppingCart.Add(classInstance);
+			
 		}
 		else
 		{

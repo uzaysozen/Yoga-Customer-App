@@ -29,10 +29,10 @@
                         <HorizontalStackLayout Padding="10" Spacing="75">
                             <!-- ClassInstance Details -->
                             <VerticalStackLayout HorizontalOptions="StartAndExpand">
-                                <Label Text="{Binding ClassDate}" VerticalOptions="Center" />
-                                <Label Text="{Binding ClassTime}" VerticalOptions="Center" />
-                                <Label Text="{Binding DayOfTheWeek}" VerticalOptions="Center" />
-                                <Label Text="{Binding TeacherName}" VerticalOptions="Center" />
+                                <Label Text="{Binding date}" VerticalOptions="Center" />
+                                <Label Text="{Binding classTime}" VerticalOptions="Center" />
+                                <Label Text="{Binding classDay}" VerticalOptions="Center" />
+                                <Label Text="{Binding teacher}" VerticalOptions="Center" />
                             </VerticalStackLayout>
 
                             <!-- Add to Cart Button -->

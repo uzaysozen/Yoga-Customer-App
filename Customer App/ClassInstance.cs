@@ -1,9 +1,4 @@
 ﻿using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Customer_App
 {
@@ -15,11 +10,11 @@ namespace Customer_App
 
         [MaxLength(250)]
         [Unique]
-        public int ClassId { get; set; }
-        public DateTime ClassDate { get; set; }  
-        public string TeacherName { get; set; }
-        public string DayOfTheWeek { get; set; }
-        public string ClassTime { get; set; }
+        public int instanceId { get; set; }
+        public string date { get; set; }  
+        public string teacher { get; set; }
+        public string classDay { get; set; }
+        public string classTime { get; set; }
 
     }
 }

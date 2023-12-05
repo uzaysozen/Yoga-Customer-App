@@ -15,13 +15,18 @@ public partial class ProfilePage : ContentPage
 	{
 		base.OnAppearing();
 		app = Application.Current as App;
-		userEmailTxt.Text = app.User.Email;
+		userEmailTxt.Text = app.User.userId;
 	}
 
 	private void OnSignOut(object sender, EventArgs e)
 	{
-		app.User = null;
-		app.ShoppingCart = null;
+		if (app.User != null)
+		{
+            app.User = null;
+            app.ShoppingCart = null;
+        }
+		
+		
 		Shell.Current.GoToAsync("///LoginPage");
 		//Navigation.PopToRootAsync();
 	}

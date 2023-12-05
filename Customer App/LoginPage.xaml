@@ -1,30 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Customer_App.MainPage">
+             x:Class="Customer_App.LoginPage">
 
     <ScrollView Margin="20">
 
-        <Frame CornerRadius="0" BackgroundColor="White"
-        Grid.Row="1" VerticalOptions="CenterAndExpand"
-        Margin="0,0,0,0">
-            <VerticalStackLayout Spacing="25">
 
+        <Frame CornerRadius="20"
+        Grid.Row="1" VerticalOptions="CenterAndExpand"
+        Margin="0,0,0,0" BackgroundColor="AliceBlue">
+
+            <VerticalStackLayout Spacing="25">
+              
                 <Label
-                Text="SIGN IN"
+                Text="Sign In"
                 SemanticProperties.HeadingLevel="Level1"
-                FontSize="16"
-                FontAttributes="Bold" />
+                FontSize="26"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"/>
 
                 <Frame Padding="10">
                     <Grid ColumnDefinitions="5,*" ColumnSpacing="10" >
-                        <Entry Placeholder="Email" Grid.Column="1"/>
+                        <Entry x:Name="emailTxt" Placeholder="Email" Grid.Column="1"/>
                     </Grid>
                 </Frame>
 
 
-                <Button Text="Sign In" FontSize="20" FontAttributes="Bold" Clicked="OnCounterClicked"/>
-                
+                <Button CornerRadius="50" WidthRequest="150" Text="Sign in" FontSize="16" Clicked="OnSignIn"/>
+
 
             </VerticalStackLayout>
 

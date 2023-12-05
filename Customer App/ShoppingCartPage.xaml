@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Customer_App.ShoppingCartPage">
+    <Grid Padding="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- CollectionView -->
+        <CollectionView Grid.Row="0" x:Name="ShoppingCartCollectionView" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout Spacing="75" Padding="10">
+                        <!-- ClassInstance details -->
+                        <VerticalStackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="{Binding date}" VerticalOptions="Center" />
+                            <Label Text="{Binding classTime}" VerticalOptions="Center" />
+                            <Label Text="{Binding classDay}" VerticalOptions="Center" />
+                            <Label Text="{Binding teacher}" VerticalOptions="Center" />
+                        </VerticalStackLayout>
+
+                        <!-- Remove Button -->
+                        <Button Text="Remove" FontAttributes="Bold" VerticalOptions="Center" Clicked="Remove_Clicked" BorderColor="Red" BackgroundColor="Red"/>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Bottom Button -->
+        <Button Grid.Row="1" Text="Book Selected Classes" WidthRequest="200" HorizontalOptions="Center" Clicked="Book_Class" BackgroundColor="ForestGreen"/>
+    </Grid>
+</ContentPage>

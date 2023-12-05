@@ -1,31 +1,47 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Customer_App.ClassListPage"
-             Title="Available class list">
+             x:Class="Customer_App.ClassListPage">
 
-    <ScrollView>
+    <Grid Padding="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-        <VerticalStackLayout>
-            <Label 
-         Text="Welcome to Class List Page!"
-         VerticalOptions="Center" 
-         HorizontalOptions="Center" />
+        <!-- Search Area -->
+        <HorizontalStackLayout Grid.Row="0" Padding="10">
+            <!-- Search Switch -->
+            <VerticalStackLayout Padding="10">
+                <Label x:Name="SearchLabel" Text="Search by Time" HorizontalOptions="Start"/>
+                <Switch x:Name="SearchSwitch" Toggled="OnSearchSwitchToggled" HorizontalOptions="Start"/>
+            </VerticalStackLayout>
 
+            <!-- Search Bar -->
+            <SearchBar x:Name="ClassSearchBar" Placeholder="Search items..." TextChanged="OnTextChanged" HorizontalOptions="FillAndExpand" MaximumWidthRequest="200"/>
+        </HorizontalStackLayout>
 
-            <Frame Margin="40,100,40,0">
-                <Button Text="Go Back" FontSize="20" FontAttributes="Bold" Clicked="BackBtnClicked"/>
-            </Frame>
-           
+        <!-- Class Instances List -->
+        <ListView Grid.Row="1" x:Name="ClassInstancesListView" HasUnevenRows="True" SelectionMode="None" VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <HorizontalStackLayout Padding="10" Spacing="75">
+                            <!-- ClassInstance Details -->
+                            <VerticalStackLayout HorizontalOptions="StartAndExpand">
+                                <Label Text="{Binding date}" VerticalOptions="Center" />
+                                <Label Text="{Binding classTime}" VerticalOptions="Center" />
+                                <Label Text="{Binding classDay}" VerticalOptions="Center" />
+                                <Label Text="{Binding teacher}" VerticalOptions="Center" />
+                            </VerticalStackLayout>
 
+                            <!-- Add to Cart Button -->
+                            <Button Text="Add to Cart" FontAttributes="Bold" VerticalOptions="Center" Clicked="AddToCart_Clicked" BackgroundColor="DarkGoldenrod"/>
+                        </HorizontalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
-
-
-
-        </VerticalStackLayout>
-
-    </ScrollView>
-    
-   
-    
+    </Grid>
 </ContentPage>

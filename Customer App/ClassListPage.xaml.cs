@@ -11,7 +11,9 @@ public partial class ClassListPage : ContentPage
 		
 		app = Application.Current as App;
 		db = app.YogaClassDatabase;
-		List<ClassInstance> classes = db.GetClassInstanceList();
+        Rest_Client client = new Rest_Client();
+
+        List<ClassInstance> classes = db.GetClassInstanceList();
 
 		ClassInstancesListView.ItemsSource = classes;
 	}

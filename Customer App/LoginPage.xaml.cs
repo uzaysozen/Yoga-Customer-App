@@ -33,6 +33,7 @@
                     app.User = currentUser;
 				}
                 Shell.Current.GoToAsync("///ClassListPage");
+                //Shell.Current.GoToAsync("///NewPage2");
             }
         }
     }

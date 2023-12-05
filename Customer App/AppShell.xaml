@@ -7,10 +7,15 @@
     Shell.FlyoutBehavior="Disabled">
 
 
-    <ShellContent
+    <!--<ShellContent
         Title="Login"
         ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="LoginPage" />
+        Route="LoginPage" />-->
+
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate local:NewPage2}"
+        Route="NewPage2" />
 
     <TabBar x:Name="CustomerTabBar">
         <Tab Title="Class List" Icon="list_icon.svg">

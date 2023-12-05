@@ -12,6 +12,7 @@ namespace Customer_App
         {
             InitializeComponent();
             MainPage = new AppShell();
+
         }
 
         public YogaClassDB YogaClassDatabase
